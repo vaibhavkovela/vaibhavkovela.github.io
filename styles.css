@@ -1,113 +1,118 @@
-/* 
-   INTRO SECTION 
-   (Full Black Background, White Text)
-*/
-#intro {
-  height: 100vh;
-  background: #000;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 2em;
-  margin: 0;
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: white;
+    text-align: center;
 }
 
-/* Typing Effect Text */
-#typing-text {
-  font-size: 1.5em;
-  color: #bbb;
-  margin-top: 10px;
-}
-
-/*
-   MAIN CONTENT 
-   (White Background, Hidden Off-Screen Initially)
-*/
-#main-content {
-  background: #fff;
-  color: #000;
-  transform: translateY(100vh);
-  transition: transform 1.5s ease-in-out;
-}
-
-/*
-   HEADER 
-   (Fixed, starts black, transitions to white)
-*/
+/* Header Styling */
 header {
-  background: #000;   /* Black initially */
-  color: #fff;        /* White text initially */
-  padding: 15px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-  z-index: 999;       /* Ensure header is on top of everything */
-}
-
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  display: inline-block;
+    background: #000;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 }
 
 nav ul {
-  list-style: none;
-  display: inline-block;
-  margin-left: 30px;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 nav ul li {
-  display: inline-block;
-  margin: 0 15px;
+    display: inline;
+    margin: 0 15px;
 }
 
 nav ul li a {
-  color: #fff;  /* White text initially */
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
 }
 
-/*
-   SECTIONS 
-   (Add top padding to avoid overlap with fixed header)
-*/
-section {
-  padding: 80px 20px;
-  text-align: center;
-  margin: 0 auto;
-  max-width: 1000px;
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
 }
 
-/*
-   PROJECTS 
-*/
-.project-grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap; /* Wrap on smaller screens */
+/* Hero Title with Fixed "I" */
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 60px; /* Keeps height fixed for smooth transition */
 }
 
-.project-card {
-  background: #f0f0f0;
-  color: #000;
-  padding: 20px;
-  border-radius: 10px;
-  width: 250px;
-  text-align: left;
+/* "I" Stays Fixed */
+.constant {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #ffcc00;
 }
 
-/*
-   FOOTER 
-*/
+/* Changing Text Effect */
+.changing-text {
+    display: inline-block;
+    font-size: 3rem;
+    color: #fff;
+    animation: slideText 12s infinite;
+}
+
+/* Smooth Sliding Animation */
+@keyframes slideText {
+    0% { transform: translateY(0); opacity: 1; }
+    25% { transform: translateY(-100%); opacity: 0; }
+    30% { transform: translateY(100%); opacity: 0; }
+    50% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Subtext */
+.hero-subtext {
+    font-size: 1.5rem;
+    color: #ddd;
+    font-style: italic;
+    max-width: 70%;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.btn {
+    background: white;
+    color: black;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #ffcc00;
+    color: #000;
+}
+
+/* Footer */
 footer {
-  margin-top: 50px;
-  padding: 20px;
-  background: #ddd;
-  color: #000;
-  text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background: #111;
+    color: white;
 }
